@@ -10,30 +10,30 @@ It serves as both a personal study guide and a reference notebook. Each topic is
 
 frontend-study-notes/
 │
-├── JavaScript/
+├── 01-javascript/
 │   ├── arrays/
 │   ├── functions/
 │   ├── arrow-functions/
 │
-├── HTML/
+├── 02-html/
 │   ├── semantic/
 │   ├── forms/
 │
-├── CSS/
+├── 03-css/
 │   ├── selectors/
 │
-├── DOM/
+├── 04-dom/
 │   ├── events/
 │   ├── manipulation/
 │
-├── JSON/
+├── 05-json/
 │   └── travel-itinerary.json
 │
-├── APIs/
+├── 06-apis/
 │   ├── fetch-examples/
 │   └── http-methods.md
 │
-└── React/
+└── 07-react/
     ├── components/
     └── props/
 
