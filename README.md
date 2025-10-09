@@ -11,11 +11,11 @@ It serves as both a personal study guide and a reference notebook. Each topic is
 - [01-javascript/]
   - [arrays/]
     - [arrays.js]
-    - [arrayMethods.js]
+    - [array-methods.js]
   - [functions/]
     - [functions.js]
-    - [arrowFunctions.js]
-    - [higherOrderFunctions.js]
+    - [arrow-functions.js]
+    - [higher-order-functions.js]
   - [objects/]
     - [objects.js]
 
@@ -33,20 +33,20 @@ It serves as both a personal study guide and a reference notebook. Each topic is
 
 - [04-dom/]
   - [events/]
-    - [eventListeners.js]
+    - [event-listeners.js]
   - [manipulation/]
-    - [domManipulation.js]
+    - [dom-manipulation.js]
 
 - [05-json/]
   - [travel-itinerary.json]
 
 - [06-apis/]
-  - [fetchExamples.js]
-  - [httpMethods.md]
+  - [fetch-examples.js]
+  - [http-methods.md]
 
 - [07-react/]
   - [components/]
-  - [propsAndState/]
+  - [props-and-state/]
   - [jsx-examples/]
 
 & so on...
