@@ -8,34 +8,46 @@ It serves as both a personal study guide and a reference notebook. Each topic is
 
 ## 📂 Structure
 
-frontend-study-notes/
-│
-├── 01-javascript/
-│   ├── arrays/
-│   ├── functions/
-│   ├── arrow-functions/
-│
-├── 02-html/
-│   ├── semantic/
-│   ├── forms/
-│
-├── 03-css/
-│   ├── selectors/
-│
-├── 04-dom/
-│   ├── events/
-│   ├── manipulation/
-│
-├── 05-json/
-│   └── travel-itinerary.json
-│
-├── 06-apis/
-│   ├── fetch-examples/
-│   └── http-methods.md
-│
-└── 07-react/
-    ├── components/
-    └── props/
+- [01-javascript/](./javascript)
+  - [arrays/](./javascript/arrays)
+    - [arrays.js](./javascript/arrays/arrays.js)
+    - [arrayMethods.js](./javascript/arrays/arrayMethods.js)
+  - [functions/](./javascript/functions)
+    - [functions.js](./javascript/functions/functions.js)
+    - [arrowFunctions.js](./javascript/functions/arrowFunctions.js)
+    - [higherOrderFunctions.js](./javascript/functions/higherOrderFunctions.js)
+  - [objects/](./javascript/objects)
+    - [objects.js](./javascript/objects/objects.js)
+
+- [02-html/](./html)
+  - [forms/](./html/forms)
+    - [forms.html](./html/forms/forms.html)
+  - [semantic/](./html/semantic)
+    - [semantic.html](./html/semantic/semantic.html)
+
+- [03-css/](./css)
+  - [selectors/](./css/selectors)
+    - [selectors.css](./css/selectors/selectors.css)
+  - [flexbox/](./css/flexbox)
+    - [flexbox.css](./css/flexbox/flexbox.css)
+
+- [04-dom/](./dom)
+  - [events/](./dom/events)
+    - [eventListeners.js](./dom/events/eventListeners.js)
+  - [manipulation/](./dom/manipulation)
+    - [domManipulation.js](./dom/manipulation/domManipulation.js)
+
+- [05-json/](./json)
+  - [travel-itinerary.json](./json/travel-itinerary.json)
+
+- [06-apis/](./apis)
+  - [fetchExamples.js](./apis/fetchExamples.js)
+  - [httpMethods.md](./apis/httpMethods.md)
+
+- [07-react/](./react)
+  - [components/](./react/components)
+  - [propsAndState/](./react/propsAndState)
+  - [jsx-examples/](./react/jsx-examples)
 
 & so on...
 
