@@ -28,13 +28,18 @@ for (let i = 0; i < fruits.length; i++) {
     console.log(i, fruits[i]);
 }
 
-// For...of loop:
+/*
+For...of loop:
+    - Iterates over iterable objects (arrays, strings)
+    - Gives the value of each element directly without indexing 
+*/
+
 for (let fruit of fruits) {
     console.log(fruit); // loops through each fruit and logs it
 }
 
 let numbers = [1, 2, 3, 4];
 
-for (let number of numbers) {
-    console.log(number * 2); // doubles each number
+for (let number of numbers) { // goes through each value in the array 'numbers' one at a time and temporarily calls them 'number'
+    console.log(number * 2); // on each pass it takes that 'number' and doubles it 
 }
