@@ -1,6 +1,6 @@
 let fruits = ["Apple", "Orange", "Banana", "Strawberry", "Blueberry"];
 
-// Add/Remove items at the END:
+// Add/Remove items at the END (pop, push):
 
 // pop() - remove LAST element and returns it
 console.log(fruits.pop()); // removes "Blueberry" (last element) and returns it
@@ -8,9 +8,9 @@ console.log(fruits); // new array no longer has "Blueberry"
 
 // push() - add element at the END 
 fruits.push("Pear"); // adds "Pear" to the end of the array
-console.log(fruits);
+console.log(fruits); // ["Apple", "Orange", "Banana", "Strawberry", "Blueberry", "Pear"]
 
-// Add/Remove items at the START:
+// Add/Remove items at the START (shift, unshift):
 
 // shift() - remove FIRST element and returns it
 console.log(fruits.shift()); // removes "Apple" (first element) and returns it
@@ -18,7 +18,7 @@ console.log(fruits); // new array no longer has "Apple"
 
 // unshift() - add element at the START
 fruits.unshift("Pineapple"); // adds "Pineapple" to the start of the array
-console.log(fruits);
+console.log(fruits); // ["Pineapple", "Apple", "Orange", "Banana", "Strawberry", "Blueberry"]
 
 // Add/Remove practice problems:
 
@@ -98,7 +98,84 @@ function isApples(fruit) {
 
 console.log(inventory.find(isApples)); // returns { name: 'apples', quantity: 2 }
 
+/* findIndex()
+    - Returns index of the 1st element that satisfies the condition
+    - Returns -1 if no element is found
+
+Syntax:
+    arr.findIndex(callbackFn)
+        - callbackFn executes for each element in the array
+*/
+
+let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"},
+  {id: 4, name: "John"}
+];
+
+// Find the index of the first John
+console.log(users.findIndex(user => user.name == 'John')); // 0
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Mutating/Transforming/Iterating Arrays (map, splice, forEach, filter, reduce, sort, reverse)
+
+/* map()
+    - Transforms each element
+    - Returns a new array
+    - Doesn’t modify the original
+    - Runs a callback once for each element
+
+Syntax:
+    arr.map(function(item, index, array) {
+        - returns the new value instead of item
+});
+*/
+
+// 1. Convert to lowercase
+let languages = ["JAVASCRIPT", "PYTHON", "HTML", "SWIFT"];
+let lowercaseLang = languages.map(language => language.toLowerCase());
+console.log(lowercaseLang);
+
+// 2. Extract the name property from objects
+const people = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 35 }
+];
+
+let peopleNames = people.map(person => person.name); // grab each name from the 'people' array of objects
+console.log(peopleNames);
+
+// 3. Convert from Celcius to Fahrenheit
+const temperaturesInF = [32, 68, 86, 104];
+let temperaturesToC = temperaturesInF.map(temp => Math.floor((temp - 32) * 5 / 9));
+console.log(temperaturesToC);
+
+// 4. Transform numbers to strings
+const nums = [10, 20, 33, 1, 90];
+let price = nums.map(num => `$${num}`);
+console.log(price);
+
+// 5. Conditional transformation
+let evenOrOdd = nums.map(num => { // for each number, check if its even or odd then update the value to reflect that
+   if (num % 2 === 0) {
+    num = true;
+   } else {
+    num = false;
+   }
+   return num;
+});
+console.log(evenOrOdd);
+
+// 6. Format objects
+const techItems = [
+    { name: "Laptop", price: 1000 },
+    { name: "Phone", price: 800 }
+]
+let formattedTechItems = techItems.map(item => `${item.name} costs $${item.price}`);
+console.log(formattedTechItems); // Returns an array of formatted strings
 
 /* splice()
     - Swiss army knife for arrays
@@ -137,33 +214,52 @@ myFish.splice(myFish.length, 0, "sturgeon"); // start at last index, delete noth
 
 console.log(myFish);
 
-// 5. Remove 1 element at index 3
-myFish = ["angel", "clown", "mandarin", "sturgeon"];
-let removed = myFish.splice(3, 1);
+/* forEach()
+    - Iterates through each element
+    - Executes a function for each element 
+    - No return value, just transforms the array
 
-console.log(myFish); 
-console.log(removed); // returns "sturgeon"
+Syntax: 
+    arr.forEach(callbackFn)
+        - callbackFn = executes for each element in the array
+*/
 
-// 6. Remove 1 element at index 2 and insert "trumpet"
-myFish = ["angel", "clown", "mandarin", "sturgeon"];
-removed = myFish.splice(2, 1, "trumpet"); // replaces "mandarin" with "trumpet"
+// 1. Log each element
+const animals = ["Dog", "Cat", "Bird", "Bear"];
+animals.forEach(animal => console.log(animal));
 
-console.log(myFish);
-console.log(removed); // returns "mandarin"
+// 2. Capitalize first letter
+const teams = ["oilers", "kings", "bruins", "avalanche"];
+teams.forEach(team => {
+    console.log(team.charAt(0).toUpperCase() + team.slice(1));
+    /*
+        1) charAt(0) extracts the first character of each team
+        2) toUpperCase converts the first character to uppercase
+        3) team.slice(1) returns the rest of the team name starting from index 1
+    */
+});
 
-// 7. Remove 2 elements from index 0 and insert "parrot", "anemone", and "blue"
-myFish = ["angel", "clown", "mandarin", "sturgeon"];
-removed = myFish.splice(0, 2, "parrot", "anemone", "blue"); // replaces "angel" and "clown"
+/* filter()
+    - Creates new array with elements that pass a given parameter
 
-console.log(myFish);
-console.log(removed); // returns "angel" and "clown"
+Syntax:
+    arr.filter(callbackFn)
+        - callbackFn = function to execute for each element in the array
+*/
 
-// 8. Remove ALL elements starting from index 2
-myFish = ["angel", "clown", "mandarin", "sturgeon"];
-removed = myFish.splice(2); // removes everything from index 2 and on (i.e. "mandarin" and "sturgeon")
+// 1. Filter short words
+const zoo = ["Giraffe", "Monkey", "Lion", "Turtle", "Seal", "Snake"];
+let shortWords = zoo.filter(word => word.length <= 4); // filters out words that are <= 4 char long
+console.log(shortWords); //['Lion', 'Seal']
 
-console.log(myFish); // only contains "angel" and "clown" now
-console.log(removed);
+// 2. Filter words that start with a specific letter
+let startsWithS = zoo.filter(word => word.toLowerCase().startsWith("s")); // filters out words that start with 's'
+console.log(startsWithS); // ['Seal', 'Snake']
+console.log(zoo); // doesn't mutate original array
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Combining/Extracting (slice, concat, join)
 
 /* slice()
     - Returns a shallow copy of a portion of an array
