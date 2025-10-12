@@ -257,6 +257,70 @@ let startsWithS = zoo.filter(word => word.toLowerCase().startsWith("s")); // fil
 console.log(startsWithS); // ['Seal', 'Snake']
 console.log(zoo); // doesn't mutate original array
 
+/* reduce()
+    - Boils down an array into a single value
+    - Applies callback function to each element in the array
+    - Accumulates a result as the callback function is applied
+
+Syntax:
+    arr.reduce((accumulator, currentValue) => {
+            ...Logic...
+        })
+*/
+
+// 1. Calculate the sum
+const numbers = [1, 2, 3, 4];
+let sum = numbers.reduce((acc, num) => acc + num, 0);
+/*
+    acc = stores the ongoing result
+    num = current array element being processed
+    0 = optional starting point for accumulator (i.e. start at the first element)
+*/
+console.log(sum); // 1 + 2 + 3 + 4 = 10
+
+// 2. Calculate the product
+let product = numbers.reduce((acc, num) => acc * num);
+console.log(product); // 1 * 2 * 3 * 4 = 24
+
+// 3. Calculate average
+const scores = [80, 90, 100, 70];
+let average = scores.reduce((acc, num) => acc + num) / scores.length;
+console.log(average); // 80 + 90 + 100 + 70 / 4 = 85
+
+/* sort()
+    - Reorders (sorts) elements in an array
+    - Modifies the original array
+    - Default = sorts by unicode (not as numbers!)
+
+Syntax:
+    arr.sort((a, b) => {
+      ...Comparison Logic...  
+    })
+        - Comparison Logic takes 2 elements at a time:
+            - If it returns a negative num -> a comes before b
+            - If it returns 0 -> stay in same order
+            - If it returns a positive num -> b comes before a
+*/
+
+// 1. Sort numbers in ascending order
+const unsortedNums = [100, 25, 5, 10, 1];
+let sortedNums = unsortedNums.sort((a, b) => a - b);
+// When a - b is negative (i.e. 5 - 10), a stays before b
+console.log(sortedNums); 
+
+// 2. Sort numbers in descending order
+let descSort = unsortedNums.sort((a, b) => b - a);
+console.log(descSort);
+
+// 3. Sort alphabetically
+let sortAlphabetically = zoo.sort();
+console.log(zoo);
+
+// 4. Sort using localcompare
+let sortWithLocalCompare = zoo.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+// localCompare accounts for words with lowercase letters
+console.log(zoo);
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Combining/Extracting (slice, concat, join)
