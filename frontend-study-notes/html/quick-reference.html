@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Quick Reference Guide</title>
+  <style>
+    /* Basic internal CSS just for readability */
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    code {
+      background: #eee;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }
+    section {
+      margin-bottom: 3rem;
+      padding: 1rem;
+      border-left: 4px solid #ccc;
+      background: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================================= -->
+  <!-- SECTION 1: HTML BASICS                                    -->
+  <!-- ========================================================= -->
+  <section id="html-basics">
+    <h2>HTML Basics</h2>
+
+    <!-- The <html> element is the root of every HTML document. -->
+    <!-- The <head> contains metadata, links to stylesheets, and page title. -->
+    <!-- The <body> contains all visible content. -->
+
+    <p>HTML (HyperText Markup Language) structures content for the web.</p>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- SECTION 2: COMMON ELEMENTS                                -->
+  <!-- ========================================================= -->
+  <section id="common-elements">
+    <h2>Common Elements</h2>
+
+    <!-- Headings define document hierarchy, not size -->
+    <!-- h1 is the top level; avoid skipping levels -->
+    <h1>Main Heading (h1)</h1>
+
+    <!-- Paragraph and text formatting -->
+    <p>This is a <strong>strong</strong> (important) word and an <em>emphasized</em> one.</p>
+    <p>You can also use <mark>mark</mark> for highlights.
+
+    <!-- Links -->
+    <!-- The href attribute defines the URL; target="_blank" opens a new tab -->
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Docs</a>
+
+    <!-- Lists -->
+    <ul>
+      <!-- Unordered List (bulleted) -->
+      <li>Item One</li>
+      <li>Item Two</li>
+    </ul>
+    <ol>
+      <!-- Ordered List (numbered) -->
+      <li>Step One</li>
+      <li>Step Two</li>
+    </ol>
+
+    <!-- Images -->
+    <!-- src attribute describes where the image is coming from; alt attribute describes the image for accessibility -->
+    <img src="https://via.placeholder.com/150" alt="Placeholder image" />
+  </section>
+
+    <!-- Content Division -->
+    <!-- Div is used as a generic container for content -->
+     <div>
+      <p>This is a div container</p>
+     </div>
+
+
+  <!-- ========================================================= -->
+  <!-- SECTION 3: ATTRIBUTES, ID, AND CLASS                      -->
+  <!-- ========================================================= -->
+  <section id="attributes">
+    <h2>Attributes, IDs, and Classes</h2>
+
+    <!-- Attributes provide additional information about elements -->
+    <!-- Example: id (unique identifier), class (style or JS grouping) -->
+    <p id="intro" class="highlighted">This paragraph has both an ID and a class.</p>
+
+    <!-- IDs must be unique per page. -->
+    <!-- Classes can be reused across multiple elements. -->
+    <!-- You can select them in CSS/JS as:
+         CSS: #intro { color: blue; } or .highlighted { background: yellow; }
+         JS: document.getElementById("intro") or document.querySelector(".highlighted") -->
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- SECTION 4: SEMANTIC ELEMENTS                              -->
+  <!-- ========================================================= -->
+  <section id="semantic-elements">
+    <h2>Semantic Elements</h2>
+
+    <!-- Semantic elements describe their role in the document -->
+    <!-- This helps with accessibility and SEO -->
+    <header>
+      <h3>Header</h3>
+      <!-- Usually contains logo, nav, and intro content. -->
+    </header>
+
+    <nav>
+      <a href="#html-basics">HTML Basics</a> |
+      <a href="#common-elements">Common Elements</a>
+    </nav>
+
+    <main>
+      <article>
+        <h3>Article</h3>
+        <!-- Independent content block — e.g., a blog post. -->
+      </article>
+
+      <aside>
+        <h4>Aside</h4>
+        <!-- Side content or context related to the main content. -->
+      </aside>
+    </main>
+
+    <footer>
+      <!-- Copyright info, policy links, etc. -->
+    </footer>
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- SECTION 5: FORMS AND INPUT TYPES                          -->
+  <!-- ========================================================= -->
+  <section id="forms">
+    <h2>Forms and Input Types</h2>
+
+    <!-- The <form> element collects user input. -->
+    <!-- The action attribute defines where the data goes (server URL). -->
+    <!-- The method attribute is usually "get" or "post". -->
+    <form action="/submit" method="post">
+      <!-- Text input -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="username" placeholder="Enter your name" />
+
+      <!-- Email input -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="useremail" required />
+
+      <!-- Password input -->
+      <label for="pwd">Password:</label>
+      <input type="password" id="pwd" name="userpwd" />
+
+      <!-- Number input -->
+      <label for="age">Age:</label>
+      <input type="number" id="age" min="0" max="120" />
+
+      <!-- Date input -->
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" />
+
+      <!-- Checkbox and Radio -->
+      <label><input type="checkbox" name="subscribe" /> Subscribe to newsletter</label>
+      <label><input type="radio" name="gender" value="male" /> Male</label>
+      <label><input type="radio" name="gender" value="female" /> Female</label>
+
+      <!-- Submit button -->
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- For reference:
+         Common input types: text, password, email, number, date, file, color, range, url, tel, checkbox, radio, submit.
+         Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- SECTION 6: BEST PRACTICES                    -->
+  <!-- ========================================================= -->
+  <section id="best-practices">
+    <h2>Best Practices</h2>
+    <!-- Keep structure semantic: header, nav, main, article, aside, footer. -->
+    <!-- Use IDs for unique targets, classes for reusable groups. -->
+  </section>
+
+</body>
+</html>
