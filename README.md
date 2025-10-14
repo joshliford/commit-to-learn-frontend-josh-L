@@ -20,10 +20,7 @@ It serves as both a personal study guide and a reference notebook. Each topic is
     - [objects.js]
 
 - [02-html/]
-  - [forms/]
-    - [forms.html]
-  - [semantic/]
-    - [semantic.html]
+  - [quick-reference.html]
 
 - [03-css/]
   - [selectors/]
@@ -45,6 +42,7 @@ It serves as both a personal study guide and a reference notebook. Each topic is
   - [http-methods.md]
 
 - [07-react/]
+  - [common-array-methods.js]
   - [components/]
   - [props-and-state/]
   - [jsx-examples/]

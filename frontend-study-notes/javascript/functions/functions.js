@@ -54,3 +54,33 @@ function celciusToFahr(temperature) {
     return (temperature * 1.8) + 32;
 }
 console.log(celciusToFahr(0));
+
+// 5. The price of a candy bar is 2 dollars. You can exchange 3 candy bar wrappers for a free candy bar.
+// Write a function to calculate the number of candy bars you can eat with 16 dollars.
+function candyBars(dollars) {
+    let costPerBar = 2;
+    // 3 bars = 1 free
+    let totalCandyBars = dollars / costPerBar;
+    let wrappers = totalCandyBars;
+
+    while (wrappers >= 3) {
+        let freeBars = Math.floor(wrappers / 3);
+        totalCandyBars += freeBars;
+        wrappers = (wrappers % 3) + freeBars; // remaining wrappers + new free bars' wrappers
+    }
+    return totalCandyBars
+}
+
+console.log(candyBars(16));
+
+// 6. Write a function that takes an array of numbers and returns the sum of all even numbers in the array.
+function sumOfEvens(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            sum += arr[i];
+        }
+    }
+    return sum;
+}
+
