@@ -135,6 +135,23 @@ text-transform: uppercase; /* uppercase | lowercase | capitalize */
 letter-spacing: 2px; /* space between letters */
 ```
 
+### Lists
+```css
+list-style-type: disc; /* disc | circle | square | none | decimal | lower-alpha | upper-roman */
+list-style-position: inside; /* inside | outside (default) */
+list-style-image: url('arrow.png'); /* custom bullet image */
+list-style: square inside; /* shorthand: type | position */
+
+/* Common: Remove default list styling */
+ul {
+  list-style: none; /* removes bullets */
+  padding-left: 0; /* removes default indent */
+  margin: 0; /* removes default margin */
+}
+```
+
+**List behavior**: By default, `<ul>` and `<ol>` have left padding (not margin) that creates the indent. List items (`<li>`) are `display: list-item` by default, which shows the bullet/number.
+
 ### Colors & Backgrounds
 ```css
 color: #333; /* text color */
