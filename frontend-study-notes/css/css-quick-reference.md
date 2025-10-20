@@ -152,6 +152,44 @@ ul {
 
 **List behavior**: By default, `<ul>` and `<ol>` have left padding (not margin) that creates the indent. List items (`<li>`) are `display: list-item` by default, which shows the bullet/number.
 
+### Links
+Links have default browser styling that you'll often want to customize.
+
+```css
+/* Basic link styling */
+a {
+  color: #0066cc; /* link color */
+  text-decoration: none; /* removes underline */
+  transition: color 0.3s ease; /* smooth color change */
+}
+
+/* Link states - MUST be in this order (LoVe HAte) */
+a:link { color: blue; } /* unvisited link */
+a:visited { color: purple; } /* visited link */
+a:hover { color: darkblue; } /* mouse over */
+a:active { color: red; } /* being clicked */
+
+/* Modern approach - often just need these two */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+a:hover {
+  color: #004999;
+  text-decoration: underline;
+}
+
+/* Remove outline on focus (but provide alternative for accessibility) */
+a:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+```
+
+**Important order**: When styling multiple link states, use **LoVe HAte** order (Link, Visited, Hover, Active) to avoid specificity issues.
+
+**Accessibility tip**: Always provide a visual indicator for hover and focus states so users know the link is interactive.
+
 ### Colors & Backgrounds
 ```css
 color: #333; /* text color */
