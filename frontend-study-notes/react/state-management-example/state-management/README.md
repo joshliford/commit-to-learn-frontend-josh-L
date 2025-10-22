@@ -1,16 +1,14 @@
-# React + Vite
+# React State
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- State is a component's **memory** - it lets a component remember values between renders
+- It holds data that can change over time (i.e. user input, clicks, counters)
+- When state changes, React re-renders the component to update what's shown on screen
+- State is local to the component that defines it, but can be shared with child componentes via **props**
 
-Currently, two official plugins are available:
+## useState Hook
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Used to declare and manage state inside a functional component
+- Returns an **array with 2 elements**:
+    - **Current state value** (initial value)
+    - State **updater function** (used to request React to update the state)
+- Each call to useState creates an independent piece of state
